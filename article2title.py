@@ -15,13 +15,13 @@ def article2title(article):
     words = article.split()
     title = words[0]
     words.pop(0)
+    break_out_flag = False
     for word in words:
         if len(title + " " + word) <= 22:
-           title = title + " " + word
-           
+            title = title + " " + word
         else:
-            break_out_flag = True
-            
+            break_out_flag = True  
         if break_out_flag:
             break
+    title = title + "..."
     return title
